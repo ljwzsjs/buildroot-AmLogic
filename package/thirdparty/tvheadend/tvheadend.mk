@@ -26,10 +26,11 @@ TVHEADEND_CONFIGURE_OPTS   += --disable-imagecache
 endif
 
 define TVHEADEND_INSTALL_TARGET_CMDS
-	mkdir -p $(TARGET_DIR)/root/.hts/tvheadend
-        mkdir -p $(TARGET_DIR)/root/.hts/tvheadend/accesscontrol
-	$(INSTALL) -D package/thirdparty/tvheadend/accesscontrol.1 $(TARGET_DIR)/root/.hts/tvheadend/accesscontrol/1
-	$(INSTALL) -D package/thirdparty/tvheadend/S55tvheadend $(TARGET_DIR)/etc/init.d/S55tvheadend
+	mkdir -p $(TARGET_DIR)/root/.xbmc/tvheadend
+        mkdir -p $(TARGET_DIR)/root/.xbmc/tvheadend/accesscontrol
+	$(INSTALL) -D package/thirdparty/tvheadend/accesscontrol.1 $(TARGET_DIR)/root/.xbmc/tvheadend/accesscontrol/1
+	$(INSTALL) -D package/thirdparty/tvheadend/superuser $(TARGET_DIR)/root/.xbmc/tvheadend/superuser
+	$(INSTALL) -D package/thirdparty/tvheadend/S92tvheadend $(TARGET_DIR)/etc/init.d/S92tvheadend
 endef
 
 $(eval $(call AUTOTARGETS,package/thirdparty,tvheadend))
