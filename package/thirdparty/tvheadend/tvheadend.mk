@@ -4,7 +4,7 @@
 #
 ##############################################################
 
-TVHEADEND_VERSION = babe15958e235ee9ec7b12bf455a908b95532936
+TVHEADEND_VERSION = v3.4
 TVHEADEND_SITE_METHOD = git
 TVHEADEND_SITE = git://github.com/tvheadend/tvheadend.git
 TVHEADEND_INSTALL_STAGING = YES
@@ -26,11 +26,6 @@ TVHEADEND_CONFIGURE_OPTS   += --disable-imagecache
 endif
 
 define TVHEADEND_INSTALL_TARGET_CMDS
-	mkdir -p $(TARGET_DIR)/root/.xbmc/tvheadend
-        mkdir -p $(TARGET_DIR)/root/.xbmc/tvheadend/accesscontrol
-	$(INSTALL) -D package/thirdparty/tvheadend/accesscontrol.1 $(TARGET_DIR)/root/.xbmc/tvheadend/accesscontrol/1
-	$(INSTALL) -D package/thirdparty/tvheadend/superuser $(TARGET_DIR)/root/.xbmc/tvheadend/superuser
 	$(INSTALL) -D package/thirdparty/tvheadend/S92tvheadend $(TARGET_DIR)/etc/init.d/S92tvheadend
 endef
-
 $(eval $(call AUTOTARGETS,package/thirdparty,tvheadend))
