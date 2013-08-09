@@ -1,7 +1,7 @@
 <advancedsettings>
   <enablenetworkmanager>1</enablenetworkmanager>
   <showexitbutton>false</showexitbutton>
-  <remoterepeat>1000</remoterepeat>
+  <remoterepeat>1200</remoterepeat>
   <pvr>
     <minvideocachelevel>50</minvideocachelevel>
     <minaudiocachelevel>50</minaudiocachelevel>
