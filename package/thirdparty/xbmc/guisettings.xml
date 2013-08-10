@@ -18,4 +18,26 @@
         <enablemouse>false</enablemouse>
         <remoteaskeyboard>true</remoteaskeyboard>
     </input>
+    <services>
+        <airplay>true</airplay>
+        <airplaypassword></airplaypassword>
+        <devicename>The Little Black Box</devicename>
+        <esallinterfaces>true</esallinterfaces>
+        <escontinuousdelay>25</escontinuousdelay>
+        <esenabled>true</esenabled>
+        <esinitialdelay>750</esinitialdelay>
+        <esmaxclients>20</esmaxclients>
+        <esport>9777</esport>
+        <esportrange>10</esportrange>
+        <upnpannounce>true</upnpannounce>
+        <upnprenderer>true</upnprenderer>
+        <upnpserver>true</upnpserver>
+        <useairplaypassword>false</useairplaypassword>
+        <webserver>true</webserver>
+        <webserverpassword>tlbb</webserverpassword>
+        <webserverport>8080</webserverport>
+        <webserverusername>tlbb</webserverusername>
+        <webskin>webinterface.default</webskin>
+        <zeroconf>true</zeroconf>
+    </services>
 </settings>
