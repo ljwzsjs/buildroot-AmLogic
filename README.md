@@ -1,6 +1,6 @@
 # Get a build host.
 
-You need 32 (i386) bit libraries for the code sorcerer toolchain. One
+You need 32-bit (i386) libraries for the code sorcerer toolchain. One
 simple way to do this is in an i386 chroot or virtual machine.
 
 # Install the build pre-reqs.
@@ -12,7 +12,11 @@ In a fresh minimal Debian Unstable install,
       automake autoconf  nasm unzip gettext flex bison libsdl-image1.2 \
       liblzo2-2 lzma python openjdk-7-jre-headless \
       texinfo libxml-parser-perl wget pkg-config swig cpio zlib1g-dev \
+<<<<<<< HEAD
       libgmp-dev libmpfr-dev subversion
+=======
+      libncurses5-dev autopoint
+>>>>>>> upstream/master
 ```
 
 Note that as of current (2012-10-10) Debian Unstable, python defaults
@@ -34,9 +38,9 @@ The following devices are supported at this moment;
 
       Pivos XIOS DS M3 == amlogic_xios_m3-xbmc_defconfig
 
-      Refee/OE Smart TV Box == amlogic_f16ref-xbmc_defconfig
+      Refee/OE Smart TV Box == amlogic_f16ref_gbox_1-xbmc_defconfig
 
-      GBox Midnight == amlogic_f16ref_gbox-xbmc_defconfig
+      GBox Midnight v2.0+ == amlogic_f16ref_gbox-xbmc_defconfig
       
       GBox Midnight v2.0 == amlogic_f16ref_gbox_1-xbmc_defconfig
 
@@ -46,6 +50,7 @@ The following devices are supported at this moment;
 
       Geniatech/MyGica Enjoy TV 510b == amlogic_stvmc-xbmc_defconfig
 
+      MyGica A11 == amlogic_stvmc_mygica-a11-xbmc_defconfig
 
 So run one of the following commands
 ```shell
@@ -67,6 +72,11 @@ or
 ```shell
 % make amlogic_stvmc-xbmc_defconfig
 ```
+or
+```shell
+% make amlogic_stvmc_mygica-a11-xbmc_defconfig
+```
+
 
 Then build the update file
 ```shell

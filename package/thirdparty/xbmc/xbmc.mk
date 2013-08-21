@@ -4,9 +4,9 @@
 #
 #################################################################################
 
-XBMC_VERSION = 4b20706ed29721d3896a683289739d62013db2d1
+XBMC_VERSION = 91f7a05505bab765d799dd0c3e4eef6422f8f910
 XBMC_SITE_METHOD = git
-XBMC_SITE = git://github.com/Pivosgroup/xbmc.git
+XBMC_SITE = git://github.com/j1nx/xbmc.git
 XBMC_INSTALL_STAGING = YES
 XBMC_INSTALL_TARGET = YES
 
@@ -22,7 +22,7 @@ XBMC_DEPENDENCIES += libogg flac libmad libmpeg2 libogg \
   freetype jasper jpeg libmodplug libpng libungif tiff libcurl \
   libmicrohttpd libssh2 boost fribidi ncurses pcre libnfs afpfs-ng \
   libplist libshairport libbluray libcec \
-  readline expat libxml2 yajl samba30 libass opengl libusb-compat \
+  readline expat libxml2 yajl samba36 libass opengl libusb-compat \
   avahi udev tinyxml taglib18 libssh
 
 ifeq ($(BR2_PACKAGE_LIBAMPLAYERM1),y)
@@ -58,7 +58,6 @@ define XBMC_INSTALL_ETC
   cp -f package/thirdparty/xbmc/guisettings.xml $(TARGET_DIR)/usr/share/xbmc/system/
   cp -f package/thirdparty/xbmc/advancedsettings.xml $(TARGET_DIR)/usr/share/xbmc/system/
   cp -f package/thirdparty/xbmc/nobs.xml $(TARGET_DIR)/usr/share/xbmc/system/keymaps/
-
 endef
 
 define XBMC_INSTALL_REMOTE_CONF
