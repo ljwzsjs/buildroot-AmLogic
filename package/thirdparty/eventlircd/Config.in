@@ -1,0 +1,5 @@
+config BR2_PACKAGE_EVENTLIRCD
+        bool "eventlircd"
+        help
+          Remote Control Driver/Daemon for hid devices
+
