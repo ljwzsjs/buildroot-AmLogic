@@ -1,0 +1,39 @@
+#! /bin/sh
+#
+# System-V init script for the eventlirc daemon
+#
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="EVENTLIRCD"
+NAME=eventlircd
+
+# Gracefully exit if the package has been removed.
+test -x $DAEMON || exit 0
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: $NAME"
+	mkdir -p /var/run/eventlircd
+	start-stop-daemon -S -q -x eventlircd --evmap=/etc/eventlircd.d --socket=/var/run/lirc/lircd --release=_UP
+	echo "."
+	;;
+  stop) echo -n "Stopping $DESC: $NAME"
+	start-stop-daemon -K -q -n $NAME
+	echo "."
+	;;
+  reload|force-reload) echo -n "Reloading $DESC configuration..."
+	start-stop-daemon -K -q -n $NAME -s 1
+	echo "done."
+  ;;
+  restart) echo "Restarting $DESC: $NAME"
+	$0 stop
+	sleep 1
+	$0 start
+	;;
+  *) echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0
+
