@@ -14,7 +14,7 @@ case "$1" in
   start)
 	echo -n "Starting $DESC: $NAME"
 	mkdir -p /var/run/eventlircd
-	start-stop-daemon -S -q -x eventlircd --evmap=/etc/eventlircd.d --socket=/var/run/lirc/lircd --release=_UP
+	start-stop-daemon -S -q -x eventlircd "--evmap=/etc/eventlircd.d --socket=/var/run/lirc/lircd --release=_UP"
 	echo "."
 	;;
   stop) echo -n "Stopping $DESC: $NAME"

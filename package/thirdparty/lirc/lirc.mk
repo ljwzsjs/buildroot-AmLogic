@@ -1,4 +1,4 @@
-LIRC_VERSION = 0.8.7
+LIRC_VERSION = 0.9.0
 LIRC_SOURCE = lirc-$(LIRC_VERSION).tar.gz
 LIRC_SITE = http://$(BR2_SOURCEFORGE_MIRROR).dl.sourceforge.net/project/lirc/LIRC/$(LIRC_VERSION)
 LIRC_INSTALL_STAGING = YES
@@ -37,9 +37,14 @@ define LIRC_INSTALL_ETC
   cp -rf package/thirdparty/lirc/etc $(TARGET_DIR)
 endef
 
+define LIRC_INSTALL_UDEV
+  cp -rf package/thirdparty/lirc/udev/* $(TARGET_DIR)/lib/udev/rules.d/
+endef
+
 LIRC_POST_CONFIGURE_HOOKS += LIRC_REMOVE_BROKEN_DRIVERS
 LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_DEPMOD
 LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_INSTALL_ETC
+LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_INSTALL_UDEV
 
 $(eval $(call AUTOTARGETS,package/thirdparty,lirc))
 

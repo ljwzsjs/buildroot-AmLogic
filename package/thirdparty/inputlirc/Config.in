@@ -1,0 +1,4 @@
+config BR2_PACKAGE_INPUTLIRC
+	bool "inputlirc"
+        help
+          Inputlirc binary

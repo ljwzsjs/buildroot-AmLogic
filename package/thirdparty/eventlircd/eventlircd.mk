@@ -1,16 +1,17 @@
 EVENTLIRCD_VERSION = 42
-EVENTLIRCD_SOURCE = lirc-$(LIRC_VERSION).tar.gz
-EVENTLIRCD_SITE = http://code.google.com/p/eventlircd
+EVENTLIRCD_SOURCE = eventlircd-$(EVENTLIRCD_VERSION).tar.bz2
+EVENTLIRCD_SITE = http://sources.openelec.tv/devel/
 EVENTLIRCD_INSTALL_STAGING = YES
 EVENTLIRCD_INSTALL_TARGET = YES
-EVENTLIRCD_DEPENDENCIES = linux26 lirc
+EVENTLIRCD_AUTORECONF = YES
+EVENTLIRCD_DEPENDENCIES = linux26 lirc udev
 EVENTLIRCD_MAKE=$(MAKE1)
 
-EVENTLIRCD_CONF_OPT+= --with-driver=devinput
-
-
 define EVENTLIRCD_INSTALL_ETC
-  cp -rf package/thirdparty/eventlircd/etc $(TARGET_DIR)
+  mkdir -p $(TARGET_DIR)/etc/init.d
+  cp -rf package/thirdparty/eventlircd/etc/init.d/* $(TARGET_DIR)/etc/init.d
+  mkdir -p $(TARGET_DIR)/etc/eventlircd.d
+  cp -rf package/thirdparty/eventlircd/etc/eventlirc.d/* $(TARGET_DIR)/etc/eventlirc.d
 endef
 
 define EVENTLIRCD_INSTALL_UDEV
