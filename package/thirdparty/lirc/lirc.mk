@@ -1,17 +1,26 @@
-LIRC_VERSION = 0.9.0
+LIRC_VERSION = 0.8.7
 LIRC_SOURCE = lirc-$(LIRC_VERSION).tar.gz
 LIRC_SITE = http://$(BR2_SOURCEFORGE_MIRROR).dl.sourceforge.net/project/lirc/LIRC/$(LIRC_VERSION)
 LIRC_INSTALL_STAGING = YES
 LIRC_INSTALL_TARGET = YES
-LIRC_DEPENDENCIES = linux26
+LIRC_DEPENDENCIES = linux26 libftdi libusb-compat
 LIRC_MAKE=$(MAKE1)
 
 LIRC_CONF_OPT += --with-kerneldir=$(LINUX26_DIR)
-LIRC_CONF_OPT += --with-driver=all
+LIRC_CONF_OPT += --with-driver=userspace
 LIRC_CONF_OPT += --with-moduledir="/lib/modules/$(LINUX26_VERSION_PROBED)/misc"
+LIRC_CONF_OPT += --prefix=/usr
+LIRC_CONF_OPT += --sysconfdir=/etc
+LIRC_CONF_OPT += --enable-shared
+LIRC_CONF_OPT += --disable-static
+LIRC_CONF_OPT += --enable-sandboxed
+LIRC_CONF_OPT += --with-gnu-ld
 
 # hack to avoid mknod (requires root). This will be populated automatically.
 LIRC_CONF_OPT += ac_cv_path_mknod=$(shell which echo)
+LIRC_CONF_OPT += ac_cv_path_LIBUSB_CONFIG=
+LIRC_CONF_OPT += ac_cv_func_forkpty=no
+LIRC_CONF_OPT += ac_cv_lib_util_forkpty=no
 
 # disable X support
 LIRC_CONF_OPT += --without-x
@@ -37,14 +46,14 @@ define LIRC_INSTALL_ETC
   cp -rf package/thirdparty/lirc/etc $(TARGET_DIR)
 endef
 
-define LIRC_INSTALL_UDEV
-  cp -rf package/thirdparty/lirc/udev/* $(TARGET_DIR)/lib/udev/rules.d/
-endef
+#define LIRC_INSTALL_UDEV
+#  cp -rf package/thirdparty/lirc/udev/* $(TARGET_DIR)/lib/udev/rules.d/
+#endef
 
 LIRC_POST_CONFIGURE_HOOKS += LIRC_REMOVE_BROKEN_DRIVERS
 LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_DEPMOD
 LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_INSTALL_ETC
-LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_INSTALL_UDEV
+#LIRC_POST_INSTALL_TARGET_HOOKS += LIRC_INSTALL_UDEV
 
 $(eval $(call AUTOTARGETS,package/thirdparty,lirc))
 
