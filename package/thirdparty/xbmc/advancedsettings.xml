@@ -6,7 +6,10 @@
     <minvideocachelevel>50</minvideocachelevel>
     <minaudiocachelevel>50</minaudiocachelevel>
   </pvr>
-
+  <network>
+    <alwaysforcebuffer>true</alwaysforcebuffer>
+    <readbufferfactor>4</readbufferfactor>
+  </network>
   <hidesettings>
     <setting>lookandfeel.soundskin</setting>
     <setting>videoplayer.rendermethod</setting>
