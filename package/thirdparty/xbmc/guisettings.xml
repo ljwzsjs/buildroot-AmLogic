@@ -34,9 +34,9 @@
         <upnpserver>true</upnpserver>
         <useairplaypassword>false</useairplaypassword>
         <webserver>true</webserver>
-        <webserverpassword>tlbb</webserverpassword>
+        <webserverpassword></webserverpassword>
         <webserverport>8080</webserverport>
-        <webserverusername>tlbb</webserverusername>
+        <webserverusername></webserverusername>
         <webskin>webinterface.default</webskin>
         <zeroconf>true</zeroconf>
     </services>
