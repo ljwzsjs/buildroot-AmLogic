@@ -1,2 +1,2 @@
-LIRCD_OPTS="-d /dev/lirc0 -o /dev/lircd /etc/lirc/lircd.conf"
+LIRCD_OPTS="-H devinput -d /dev/input/event5"
 
