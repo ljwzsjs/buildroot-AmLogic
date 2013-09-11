@@ -1,12 +1,12 @@
 <advancedsettings>
   <enablenetworkmanager>1</enablenetworkmanager>
   <showexitbutton>false</showexitbutton>
-  <remoterepeat>800</remoterepeat>
   <pvr>
     <minvideocachelevel>50</minvideocachelevel>
     <minaudiocachelevel>50</minaudiocachelevel>
   </pvr>
   <network>
+    <cachemembuffersize>209715200</cachemembuffersize>
     <alwaysforcebuffer>true</alwaysforcebuffer>
     <readbufferfactor>4</readbufferfactor>
   </network>
