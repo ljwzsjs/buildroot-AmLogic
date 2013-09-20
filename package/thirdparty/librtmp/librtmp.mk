@@ -24,10 +24,10 @@ endef
 
 define LIBRTMP_INSTALL_TARGET_CMDS
 	install -m 644 $(@D)/librtmp/librtmp.so.0 $(TARGET_DIR)/usr/lib
-	install -m 644 $(@D)/rtmpdump $(TARGET_DIR)/usr/bin
-	install -m 644 $(@D)/rtmpgw $(TARGET_DIR)/usr/bin
-	install -m 644 $(@D)/rtmpsrv $(TARGET_DIR)/usr/bin
-	install -m 644 $(@D)/rtmpsuck $(TARGET_DIR)/usr/bin
+	install -m 555 $(@D)/rtmpdump $(TARGET_DIR)/usr/bin
+	install -m 555 $(@D)/rtmpgw $(TARGET_DIR)/usr/bin
+	install -m 555 $(@D)/rtmpsrv $(TARGET_DIR)/usr/bin
+	install -m 555 $(@D)/rtmpsuck $(TARGET_DIR)/usr/bin
 endef
 
 $(eval $(call GENTARGETS,package/thirdparty,librtmp))
