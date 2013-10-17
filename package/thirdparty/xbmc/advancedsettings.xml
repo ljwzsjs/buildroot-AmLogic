@@ -1,6 +1,21 @@
 <advancedsettings>
   <enablenetworkmanager>1</enablenetworkmanager>
   <showexitbutton>false</showexitbutton>
+  <fanartres>720</fanartres>
+  <imageres>512</imageres>
+  <videolibrary>
+    <recentlyaddeditems>1000</recentlyaddeditems>
+    <hideallitems>true</hideallitems>
+    <dateadded>0</dateadded>
+  </videolibrary>
+  <video>
+    <usetimeseeking>true</usetimeseeking>
+    <timeseekforward>10</timeseekforward>
+    <timeseekbackward>-10</timeseekbackward>
+    <timeseekforwardbig>180</timeseekforwardbig>
+    <timeseekbackwardbig>-180</timeseekbackwardbig>
+    <subsdelayrange>30</subsdelayrange>
+  </video>
   <pvr>
     <minvideocachelevel>50</minvideocachelevel>
     <minaudiocachelevel>50</minaudiocachelevel>
