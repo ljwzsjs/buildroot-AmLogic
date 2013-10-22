@@ -6,5 +6,5 @@ fi
 if [ ! -f "${IMAGE}" ]; then
 exit 1
 fi
-echo "--update_package=/cache/update.zip" > /recovery/recovery/command || exit 1
+echo -e "--update_package=/cache/update.zip\n--wipe_cache\n" > /recovery/recovery/command || exit 1
 reboot recovery
