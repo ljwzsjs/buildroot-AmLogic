@@ -221,7 +221,10 @@ def main():
         f.write('assert(package_extract_file("uImage-2.6.34.14", "/tmp/boot.img"),\n')
         f.write('    write_raw_image("/tmp/boot.img", "boot"),\n')
         f.write('    delete("/tmp/boot.img"));\n')
-        f.write('show_progress(0.020000, 0);\n')
+        f.write('assert(package_extract_file("uImage-recovery", "/tmp/recovery.img"),\n')
+        f.write('    write_raw_image("/tmp/recovery.img", "recovery"),\n')
+        f.write('    delete("/tmp/recovery.img"));\n')
+	f.write('show_progress(0.020000, 0);\n')
         f.write('unmount("/system");\n')
         f.close()
         print "Done!"
