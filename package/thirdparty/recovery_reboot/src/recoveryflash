@@ -1,11 +1,10 @@
 #!/bin/sh
-IMAGE="$1"
+IMAGE="/recovery/update.zip"
 if [ -z "${IMAGE}" ]; then
 exit 1
 fi
 if [ ! -f "${IMAGE}" ]; then
 exit 1
 fi
-mv -f "${IMAGE}" /media/usb0/update.zip || exit 1
-echo "--update_package=/udisk/update.zip" > /media/usb0/factory_update_param.aml || exit 1
+echo -e "--update_package=/cache/update.zip\n--wipe_cache\n" > /recovery/recovery/command || exit 1
 reboot recovery

@@ -2,11 +2,6 @@
   <enablenetworkmanager>1</enablenetworkmanager>
   <showexitbutton>false</showexitbutton>
   <fanartres>720</fanartres>
-  <network>
-    <cachemembuffersize>52428800</cachemembuffersize>
-    <readbufferfactor>2.0</readbufferfactor>
-    <alwaysforcebuffer>1</alwaysforcebuffer>
-  </network>
   <videolibrary>
     <recentlyaddeditems>1000</recentlyaddeditems>
     <hideallitems>true</hideallitems>
