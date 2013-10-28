@@ -14,6 +14,28 @@
     <videoscreen>
         <vsync>2</vsync>
     </videoscreen>
+    <myvideos>
+        <startwindow>10024</startwindow>
+        <stackvideos>false</stackvideos>
+        <watchmodemovies>0</watchmodemovies>
+        <watchmodetvshows>0</watchmodetvshows>
+        <watchmodemusicvideos>0</watchmodemusicvideos>
+        <needsupdate>0</needsupdate>
+        <flatten>false</flatten>
+        <playlist>
+            <repeat>false</repeat>
+            <shuffle>false</shuffle>
+        </playlist>
+        <extractflags>false</extractflags>
+        <extractthumb>true</extractthumb>
+        <replacelabels>true</replacelabels>
+        <selectaction>1</selectaction>
+    </myvideos>
+    <weather>
+        <addon></addon>
+        <addonsettings></addonsettings>
+        <currentlocation>1</currentlocation>
+    </weather>
     <input>
         <enablemouse>false</enablemouse>
         <remoteaskeyboard>true</remoteaskeyboard>
