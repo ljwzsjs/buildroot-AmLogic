@@ -79,28 +79,28 @@ if [ "X$1" = "Xstart" ]; then
         /bin/mount -o bind /tmp/userdata /tmp/userdata.internal
         echo $SCRIPTNAME": Binding USERDATA/xbmc-data to /tmp/userdata"
         /bin/mount -o bind $USERDATA_MNTPT/xbmc-data /tmp/userdata
-        if [ ! -d "/tmp/userdata.internal/xios/root/.xbmc/temp" ] ; then
+        if [ ! -d "/tmp/userdata.internal/tlbb/root/.xbmc/temp" ] ; then
           echo $SCRIPTNAME": Creating local xbmc temp folder"
-          mkdir -p /tmp/userdata.internal/xios/root/.xbmc/temp
+          mkdir -p /tmp/userdata.internal/tlbb/root/.xbmc/temp
         fi
-        if [ ! -d "/tmp/userdata/xios/root/.xbmc/temp" ] ; then
+        if [ ! -d "/tmp/userdata/tlbb/root/.xbmc/temp" ] ; then
           echo $SCRIPTNAME": Creating USERDATA xbmc temp folder"
-          mkdir -p /tmp/userdata/xios/root/.xbmc/temp
+          mkdir -p /tmp/userdata/tlbb/root/.xbmc/temp
         fi
         echo $SCRIPTNAME": Binding local xbmc temp to USERDATA temp"
-        /bin/mount -o bind /tmp/userdata.internal/xios/root/.xbmc/temp /tmp/userdata/xios/root/.xbmc/temp
+        /bin/mount -o bind /tmp/userdata.internal/tlbb/root/.xbmc/temp /tmp/userdata/tlbb/root/.xbmc/temp
         echo $SCRIPTNAME": Binding USERDATA root to /root"
-        /bin/mount -o bind $USERDATA_MNTPT/xbmc-data/xios/root /root
+        /bin/mount -o bind $USERDATA_MNTPT/xbmc-data/tlbb/root /root
         echo $SCRIPTNAME": Binding local xbmc temp to /root/.xbmc/temp"
-        /bin/mount -o bind /tmp/userdata.internal/xios/root/.xbmc/temp /root/.xbmc/temp
+        /bin/mount -o bind /tmp/userdata.internal/tlbb/root/.xbmc/temp /root/.xbmc/temp
       fi
     fi
     # Safety section, rename S49xbmc-pre if it contains toys4me's script
     if [ $USERDATA_XBMC -eq 1 ] ; then
-      if grep -qs 'mount -o bind /media/sdcard' /tmp/userdata/xios/root/.xbmc/S94xbmc-pre ; then
+      if grep -qs 'mount -o bind /media/sdcard' /tmp/userdata/tlbb/root/.xbmc/S94xbmc-pre ; then
         # Found S94xbmc-pre script that manipulates userdata so rename it
         echo $SCRIPTNAME": Found potentially dangerous S94xbmc-pre script, renaming it"
-        mv /tmp/userdata/xios/root/.xbmc/S94xbmc-pre /tmp/userdata/xios/root/.xbmc/S94xbmc-pre.disabled
+        mv /tmp/userdata/tlbb/root/.xbmc/S94xbmc-pre /tmp/userdata/tlbb/root/.xbmc/S94xbmc-pre.disabled
       fi
     fi
     echo $SCRIPTNAME": Checking for dropbear keys on USERDATA"

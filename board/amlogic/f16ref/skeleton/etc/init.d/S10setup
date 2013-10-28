@@ -57,8 +57,8 @@ if [ "X$1" = "Xstart" ]; then
 
   mkdir -p /tmp/userdata
   mount -t yaffs2 $USERDATA /tmp/userdata
-  mkdir -p /tmp/userdata/xios/root
-  mount -o bind /tmp/userdata/xios/root /root
+  mkdir -p /tmp/userdata/tlbb/root
+  mount -o bind /tmp/userdata/tlbb/root /root
   #
   echo "S10setup: remount / ro"
   mount -o remount,ro /
